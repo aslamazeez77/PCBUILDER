@@ -4,13 +4,17 @@
       <a routerLink="">Home</a>
     </li>
     <li>
-      <a routerLink="signup">Signup</a>
+      <a routerLink="signup" *ngIf="!auth.isLogged()">Signup</a>
     </li>
     <li>
-      <a routerLink="products">Products</a>
+      <a (click)="logout()" *ngIf="auth.isLogged()" style="cursor: pointer;">LogOut</a>
+    </li>
+    <li>
+      <a routerLink="signup">Products</a>
     </li>
     <li>
       <a routerLink="contact">Contact</a>
     </li>
+   
   </ul>
 </nav>
